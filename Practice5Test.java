@@ -1,14 +1,11 @@
-
-public class Practice5Test {
+public class Practice5Test implements Comparable<Object> {
 	
 	protected BSTree tree;
-
 
 	public Practice5Test() {
 		tree = new BSTree();
 	}
-
-
+	
 	public boolean insertRemoveTest() {
 		tree.insert("First");    // Insert a value into the tree
 		if (tree.find("First")) {    // If that works, insert another value into the tree
@@ -55,8 +52,7 @@ public class Practice5Test {
 			return true;
 		return false;
 	}
-	
-	
+
 	public boolean treePreOrderTest() {
 		// Checks whether the tree keeps data in the correct order
 		if (tree.toStringPreOrder().equals("Turing Knuth Dijstra Codd Allen Hopper Lee Lovelace Thompson Matsumoto Wilson"))
@@ -65,7 +61,6 @@ public class Practice5Test {
 		System.out.println("Expecting: " + "Turing Knuth Dijstra Codd Allen Hopper Lee Lovelace Thompson Matsumoto Wilson|");
 		return false;
 	}
-	
 	
 	public void runTests() {
 		int grade = 0;
@@ -122,10 +117,15 @@ public class Practice5Test {
 		System.out.println("Starting point for this assignment: " + grade + "%.");
 	}
 
-
 	public static void main(String[] args) {
 		Practice5Test test = new Practice5Test();
 		test.runTests();
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
